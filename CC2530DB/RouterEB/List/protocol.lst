@@ -1,0 +1,2090 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.40338/W32 for 8051         23/Aug/2012  16:52:11 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WeiYi\Source\protocol.c            #
+#    Command line       =  -f "D:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WeiYi\CC2530DB\..\..\..\Tools\ #
+#                          CC2530DB\f8wRouter.cfg" (-DCPU32MHZ                #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DRTR_NWK) -f "D:\Texas         #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\Tools\CC2530DB\f8wC #
+#                          onfig.cfg" (-DZIGBEEPRO -DSECURE=0                 #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 "D:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\Source\protocol.c" -D                 #
+#                          BUILD_ALL_DEVICES -D HOLD_AUTO_START -D ZTOOL_P1   #
+#                          -D MT_TASK -D MT_SYS_FUNC -D MT_ZDO_FUNC -D        #
+#                          LCD_SUPPORTED=DEBUG -D HAL_UART=TRUE -D xNV_INIT   #
+#                          -D NV_RESTORE -D xPOWER_SAVING -lC "D:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\RouterEB\List\" -lA          #
+#                          "D:\Texas Instruments\ZStack-CC2530-2.5.1a\Project #
+#                          s\zstack\Samples\WeiYi\CC2530DB\RouterEB\List\"    #
+#                          --diag_suppress Pe001,Pa010 -o "D:\Texas           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\RouterEB\Obj\" -e            #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "D:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WeiYi\CC2530DB\" -I "D:\Texas  #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\Source\" -I "D:\Texas     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\ZMain\TI2530DB\"    #
+#                          -I "D:\Texas Instruments\ZStack-CC2530-2.5.1a\Proj #
+#                          ects\zstack\Samples\WeiYi\CC2530DB\..\..\..\..\..\ #
+#                          Components\hal\include\" -I "D:\Texas              #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\ha #
+#                          l\target\CC2530EB\" -I "D:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\include\" -I "D:\Texas                           #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\high_level\" -I "D:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\low_level\srf04\" -I "D:\Texas                   #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\ma #
+#                          c\low_level\srf04\single_chip\" -I "D:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\mt #
+#                          \" -I "D:\Texas Instruments\ZStack-CC2530-2.5.1a\P #
+#                          rojects\zstack\Samples\WeiYi\CC2530DB\..\..\..\..\ #
+#                          ..\Components\osal\include\" -I "D:\Texas          #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\se #
+#                          rvices\saddr\" -I "D:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\se #
+#                          rvices\sdata\" -I "D:\Texas                        #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\af\" -I "D:\Texas Instruments\ZStack-CC2530-2. #
+#                          5.1a\Projects\zstack\Samples\WeiYi\CC2530DB\..\..\ #
+#                          ..\..\..\Components\stack\nwk\" -I "D:\Texas       #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sapi\" -I "D:\Texas Instruments\ZStack-CC2530- #
+#                          2.5.1a\Projects\zstack\Samples\WeiYi\CC2530DB\..\. #
+#                          .\..\..\..\Components\stack\sec\" -I "D:\Texas     #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\st #
+#                          ack\sys\" -I "D:\Texas Instruments\ZStack-CC2530-2 #
+#                          .5.1a\Projects\zstack\Samples\WeiYi\CC2530DB\..\.. #
+#                          \..\..\..\Components\stack\zdo\" -I "D:\Texas      #
+#                          Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\S #
+#                          amples\WeiYi\CC2530DB\..\..\..\..\..\Components\zm #
+#                          ac\" -I "D:\Texas Instruments\ZStack-CC2530-2.5.1a #
+#                          \Projects\zstack\Samples\WeiYi\CC2530DB\..\..\..\. #
+#                          .\..\Components\zmac\f8w\" -Ohz                    #
+#                          --require_prototypes                               #
+#    List file          =  D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WeiYi\CC2530DB\RouterEB\List\proto #
+#                          col.lst                                            #
+#    Object file        =  D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects #
+#                          \zstack\Samples\WeiYi\CC2530DB\RouterEB\Obj\protoc #
+#                          ol.r51                                             #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WeiYi\Source\protocol.c
+      1          #include "protocol.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xa8
+   \   union <unnamed> volatile __sfr _A_IEN0
+   \                     _A_IEN0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc9
+   \   unsigned char volatile __sfr WDCTL
+   \                     WDCTL:
+   \   000000                DS 1
+      2          
+      3          extern uint8 start_flag;
+      4          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      5          void myDelay(unsigned char n)  {
+   \                     myDelay:
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      6            unsigned char i;
+      7            unsigned int j;
+      8            for(i=0;i<n;i++)
+   \   000000   7800         MOV     R0,#0x0
+   \   000002   8011         SJMP    ??myDelay_0
+      9              for(j=1;j;j++)
+   \                     ??myDelay_1:
+   \   000004   7A01         MOV     R2,#0x1
+   \   000006   7B00         MOV     R3,#0x0
+   \                     ??myDelay_2:
+   \   000008   EA           MOV     A,R2
+   \   000009   2401         ADD     A,#0x1
+   \   00000B   0A           INC     R2
+   \   00000C   EB           MOV     A,R3
+   \   00000D   3400         ADDC    A,#0x0
+   \   00000F   FB           MOV     R3,A
+   \   000010   EA           MOV     A,R2
+   \   000011   4B           ORL     A,R3
+   \   000012   70F4         JNZ     ??myDelay_2
+   \   000014   08           INC     R0
+   \                     ??myDelay_0:
+   \   000015   E8           MOV     A,R0
+   \   000016   C3           CLR     C
+   \   000017   99           SUBB    A,R1
+   \   000018   40EA         JC      ??myDelay_1
+     10              ;
+     11            
+     12          }
+   \   00001A   02....       LJMP    ?BRET
+     13          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     14          uint16 UART_Send_String( unsigned char *Data,int len)
+   \                     UART_Send_String:
+     15          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     16          
+     17            return HalUARTWrite( SER_PORT,  Data, len);
+   \   000004                ; Setup parameters for call to function HalUARTWrite
+   \   000004   7900         MOV     R1,#0x0
+   \   000006   12....       LCALL   ??HalUARTWrite?relay
+   \   000009   80..         SJMP    ??Subroutine7_0
+     18          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine7_0:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+     19          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     20          uint16 uprint( uint8 * Data)
+   \                     uprint:
+     21          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   EA           MOV     A,R2
+   \   000006   FE           MOV     R6,A
+   \   000007   EB           MOV     A,R3
+   \   000008   FF           MOV     R7,A
+     22            UART_Send_String( Data, strlen(Data) );
+                                                  ^
+Warning[Pe167]: argument of type "unsigned char *" is incompatible with
+          parameter of type "char const *"
+   \   000009                ; Setup parameters for call to function UART_Send_String
+   \   000009                ; Setup parameters for call to function strlen
+   \   000009   12....       LCALL   ??strlen?relay
+   \   00000C   EA           MOV     A,R2
+   \   00000D   FC           MOV     R4,A
+   \   00000E   EB           MOV     A,R3
+   \   00000F   FD           MOV     R5,A
+   \   000010   EE           MOV     A,R6
+   \   000011   FA           MOV     R2,A
+   \   000012   EF           MOV     A,R7
+   \   000013   FB           MOV     R3,A
+   \   000014   12....       LCALL   ??UART_Send_String?relay
+     23          }
+                 ^
+Warning[Pe940]: missing return statement at end of non-void function "uprint"
+   \   000017                REQUIRE ?Subroutine1
+   \   000017                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+     24          
+     25          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     26          void set_panid( uint16 u16NewPanid)
+   \                     set_panid:
+     27          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   EA           MOV     A,R2
+   \   000011   F0           MOVX    @DPTR,A
+   \   000012   A3           INC     DPTR
+   \   000013   EB           MOV     A,R3
+   \   000014   F0           MOVX    @DPTR,A
+     28            uint8 u8BackCode;
+     29            _NIB.nwkPanId = u16NewPanid;
+   \   000015   85..82       MOV     DPL,?XSP + 0
+   \   000018   85..83       MOV     DPH,?XSP + 1
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   F8           MOV     R0,A
+   \   00001D   A3           INC     DPTR
+   \   00001E   E0           MOVX    A,@DPTR
+   \   00001F   F9           MOV     R1,A
+   \   000020   90....       MOV     DPTR,#_NIB + 33
+   \   000023   E8           MOV     A,R0
+   \   000024   F0           MOVX    @DPTR,A
+   \   000025   A3           INC     DPTR
+   \   000026   E9           MOV     A,R1
+   \   000027   F0           MOVX    @DPTR,A
+     30            macRadioSetPanID ( _NIB.nwkPanId);
+   \   000028                ; Setup parameters for call to function macRadioSetPanID
+   \   000028   90....       MOV     DPTR,#_NIB + 33
+   \   00002B   E0           MOVX    A,@DPTR
+   \   00002C   FA           MOV     R2,A
+   \   00002D   12....       LCALL   ??macRadioSetPanID?relay
+     31            ZMacSetReq( ZMacPanId, (byte *)& _NIB.nwkPanId);
+   \   000030                ; Setup parameters for call to function ZMacSetReq
+   \   000030   7A..         MOV     R2,#(_NIB + 33) & 0xff
+   \   000032   7B..         MOV     R3,#((_NIB + 33) >> 8) & 0xff
+   \   000034   7950         MOV     R1,#0x50
+   \   000036   12....       LCALL   ??ZMacSetReq?relay
+     32            
+     33            u8BackCode = osal_nv_write(ZCD_NV_PANID, 0, 2, &u16NewPanid);
+     34            if( u8BackCode == ZSUCCESS)
+   \   000039                ; Setup parameters for call to function osal_nv_write
+   \   000039   85..82       MOV     DPL,?XSP + 0
+   \   00003C   85..83       MOV     DPH,?XSP + 1
+   \   00003F   8582..       MOV     ?V0 + 0,DPL
+   \   000042   8583..       MOV     ?V0 + 1,DPH
+   \   000045   78..         MOV     R0,#?V0 + 0
+   \   000047   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004A   75..02       MOV     ?V0 + 0,#0x2
+   \   00004D   75..00       MOV     ?V0 + 1,#0x0
+   \   000050   78..         MOV     R0,#?V0 + 0
+   \   000052   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000055   7C00         MOV     R4,#0x0
+   \   000057   7D00         MOV     R5,#0x0
+   \   000059   7A83         MOV     R2,#-0x7d
+   \   00005B   12....       LCALL   ??Subroutine9_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   00005E   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000061   E9           MOV     A,R1
+   \   000062   7007         JNZ     ??set_panid_0
+     35            {
+     36              NLME_UpdateNV(0x01);
+   \   000064                ; Setup parameters for call to function NLME_UpdateNV
+   \   000064   7901         MOV     R1,#0x1
+   \   000066   12....       LCALL   ??NLME_UpdateNV?relay
+   \   000069   8007         SJMP    ??set_panid_1
+     37          //    HAL_SYSTEM_RESET();
+     38            }
+     39            else
+     40            {
+     41              uprint("set_panid failed");
+   \                     ??set_panid_0:
+   \   00006B                ; Setup parameters for call to function uprint
+   \   00006B   7A..         MOV     R2,#`?<Constant "set_panid failed">` & 0xff
+   \   00006D   7B..         MOV     R3,#(`?<Constant "set_panid failed">` >> 8) & 0xff
+   \   00006F   12....       LCALL   ??uprint?relay
+     42            }
+     43            
+     44          }
+   \                     ??set_panid_1:
+   \   000072                REQUIRE ?Subroutine3
+   \   000072                ; // Fall through to label ?Subroutine3
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   7402         MOV     A,#0x2
+   \   000002   80..         SJMP    ??Subroutine8_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine8_0:
+   \   000000   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000003   7F02         MOV     R7,#0x2
+   \   000005   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine9_0:
+   \   000000   7B00         MOV     R3,#0x0
+   \   000002                REQUIRE ??Subroutine10_0
+   \   000002                ; // Fall through to label ??Subroutine10_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine10_0:
+   \   000000   12....       LCALL   ??osal_nv_write?relay
+   \   000003   7404         MOV     A,#0x4
+   \   000005   22           RET
+     45          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     46          uint8 cb_ReadConfiguration( uint8 configId, uint8 len, void *pValue ) // it's just check the configId if existed,wont create one,unlikely osal_nv_item_init
+   \                     cb_ReadConfiguration:
+     47          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+     48            uint8 size;
+     49          
+     50            size = (uint8)osal_nv_item_len( configId );
+   \   00000D                ; Setup parameters for call to function osal_nv_item_len
+   \   00000D   8F..         MOV     ?V0 + 2,R7
+   \   00000F   AA..         MOV     R2,?V0 + 2
+   \   000011   7B00         MOV     R3,#0x0
+   \   000013   12....       LCALL   ??osal_nv_item_len?relay
+   \   000016   EA           MOV     A,R2
+   \   000017   F9           MOV     R1,A
+     51            if ( size > len )
+   \   000018   EE           MOV     A,R6
+   \   000019   C3           CLR     C
+   \   00001A   99           SUBB    A,R1
+   \   00001B   5004         JNC     ??cb_ReadConfiguration_0
+     52            {
+     53              return ZFailure;
+   \   00001D   7901         MOV     R1,#0x1
+   \   00001F   8021         SJMP    ??cb_ReadConfiguration_1
+     54            }
+     55            else
+     56            {
+     57              return( osal_nv_read(configId, 0, size, pValue) );
+   \                     ??cb_ReadConfiguration_0:
+   \   000021                ; Setup parameters for call to function osal_nv_read
+   \   000021   78..         MOV     R0,#?V0 + 0
+   \   000023   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000026   89..         MOV     ?V0 + 0,R1
+   \   000028   75..00       MOV     ?V0 + 1,#0x0
+   \   00002B   78..         MOV     R0,#?V0 + 0
+   \   00002D   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000030   7C00         MOV     R4,#0x0
+   \   000032   7D00         MOV     R5,#0x0
+   \   000034   8F..         MOV     ?V0 + 0,R7
+   \   000036   AA..         MOV     R2,?V0 + 0
+   \   000038   7B00         MOV     R3,#0x0
+   \   00003A   12....       LCALL   ??osal_nv_read?relay
+   \   00003D   7404         MOV     A,#0x4
+   \   00003F   12....       LCALL   ?DEALLOC_XSTACK8
+   \                     ??cb_ReadConfiguration_1:
+   \   000042   7F04         MOV     R7,#0x4
+   \   000044   02....       LJMP    ?BANKED_LEAVE_XDATA
+     58            }
+     59          }
+     60          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     61          uint8 cb_WriteConfiguration( uint8 configId, uint8 len, void *pValue )
+   \                     cb_WriteConfiguration:
+     62          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FF           MOV     R7,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FE           MOV     R6,A
+     63            return( osal_nv_write(configId, 0, len, pValue) );
+   \   000009                ; Setup parameters for call to function osal_nv_write
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+   \   00000D   78..         MOV     R0,#?V0 + 0
+   \   00000F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000012   8E..         MOV     ?V0 + 0,R6
+   \   000014   75..00       MOV     ?V0 + 1,#0x0
+   \   000017   78..         MOV     R0,#?V0 + 0
+   \   000019   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00001C   7C00         MOV     R4,#0x0
+   \   00001E   7D00         MOV     R5,#0x0
+   \   000020   8F..         MOV     ?V0 + 0,R7
+   \   000022   AA..         MOV     R2,?V0 + 0
+   \   000024   12....       LCALL   ??Subroutine9_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   000027   80..         SJMP    ??Subroutine8_0
+     64          }
+     65          
+     66          /************************************
+     67           cc 2530 **/
+     68          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     69          void init_cc2530(void)
+   \                     init_cc2530:
+     70          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     71              //P0SEL = 0x00;
+     72           //   P1SEL = 0x00;
+     73             //P0DIR |= 0x01;
+     74             //P1DIR |= 0x01;
+     75            
+     76          //  P0SEL &= ~0x01; // Set P0_0 as GPIO
+     77          //  P1DIR |= 0x01; // Set P0_0 as output
+     78            //P0_0 = 1; // Set P0_0 High
+     79          //  P0_0 = 0; // P0_0 is Low 
+     80            //P0INP &= ~0X00;
+     81          
+     82           
+     83            led1 = 0;   
+   \   000000   C290         CLR     0x90.0
+     84          }
+   \   000002   02....       LJMP    ?BRET
+   \   000005                REQUIRE _A_P1
+     85          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000003                REQUIRE ??Subroutine7_0
+   \   000003                ; // Fall through to label ??Subroutine7_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     86          void serial_init(void )
+   \                     serial_init:
+     87          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 29
+   \   000004   74E3         MOV     A,#-0x1d
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+     88            halUARTCfg_t uartConfig;
+     89          
+     90           
+     91            uartConfig.configured           = TRUE;                                                   // 2x30 don't care - see uart driver.
+   \   000009   85..82       MOV     DPL,?XSP + 0
+   \   00000C   85..83       MOV     DPH,?XSP + 1
+   \   00000F   7401         MOV     A,#0x1
+   \   000011   F0           MOVX    @DPTR,A
+     92            uartConfig.baudRate             = HAL_UART_BR_38400;                       //38400
+   \   000012   12....       LCALL   ?XSTACK_DISP0_8
+   \   000015   7402         MOV     A,#0x2
+   \   000017   F0           MOVX    @DPTR,A
+     93            uartConfig.flowControl          = FALSE;
+   \   000018   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001B   E4           CLR     A
+   \   00001C   F0           MOVX    @DPTR,A
+     94            uartConfig.flowControlThreshold = 64;        // 64.
+   \   00001D   7403         MOV     A,#0x3
+   \   00001F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000022   7440         MOV     A,#0x40
+   \   000024   F0           MOVX    @DPTR,A
+   \   000025   A3           INC     DPTR
+   \   000026   E4           CLR     A
+   \   000027   F0           MOVX    @DPTR,A
+     95            uartConfig.rx.maxBufSize        = 1024;                  // 128
+   \   000028   740A         MOV     A,#0xa
+   \   00002A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002D   E4           CLR     A
+   \   00002E   F0           MOVX    @DPTR,A
+   \   00002F   A3           INC     DPTR
+   \   000030   7404         MOV     A,#0x4
+   \   000032   F0           MOVX    @DPTR,A
+     96            uartConfig.tx.maxBufSize        = 1024;                  // 128
+   \   000033   7412         MOV     A,#0x12
+   \   000035   12....       LCALL   ?XSTACK_DISP0_8
+   \   000038   E4           CLR     A
+   \   000039   F0           MOVX    @DPTR,A
+   \   00003A   A3           INC     DPTR
+   \   00003B   7404         MOV     A,#0x4
+   \   00003D   F0           MOVX    @DPTR,A
+     97            uartConfig.idleTimeout          = 6;                      // 6
+   \   00003E   04           INC     A
+   \   00003F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000042   7406         MOV     A,#0x6
+   \   000044   F0           MOVX    @DPTR,A
+     98            uartConfig.intEnable            = TRUE;                                                 
+   \   000045   7416         MOV     A,#0x16
+   \   000047   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004A   7401         MOV     A,#0x1
+   \   00004C   F0           MOVX    @DPTR,A
+     99            uartConfig.callBackFunc         = Serial_callBack;                   // Call back function
+   \   00004D   741B         MOV     A,#0x1b
+   \   00004F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000052   74..         MOV     A,#??Serial_callBack?relay & 0xff
+   \   000054   F0           MOVX    @DPTR,A
+   \   000055   A3           INC     DPTR
+   \   000056   74..         MOV     A,#(??Serial_callBack?relay >> 8) & 0xff
+   \   000058   12....       LCALL   ?Subroutine4 & 0xFFFF
+    100            
+    101            HalUARTOpen (SER_PORT, &uartConfig);
+   \                     ??CrossCallReturnLabel_0:
+   \   00005B   7900         MOV     R1,#0x0
+   \   00005D   12....       LCALL   ??HalUARTOpen?relay
+    102          
+    103          }
+   \   000060   741D         MOV     A,#0x1d
+   \   000062   02....       LJMP    ?Subroutine0 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   F0           MOVX    @DPTR,A
+   \   000001                ; Setup parameters for call to function HalUARTOpen
+   \   000001                ; Setup parameters for call to function NLME_LeaveReq
+   \   000001   85..82       MOV     DPL,?XSP + 0
+   \   000004   85..83       MOV     DPH,?XSP + 1
+   \   000007   AA82         MOV     R2,DPL
+   \   000009   AB83         MOV     R3,DPH
+   \   00000B   22           RET
+    104          
+    105          static void all_dev_opera(uint8 * buf) // 所有设备开关控制 0x02
+    106          {
+    107            uint8 opera_bit;
+    108            uint16 dev_addr;
+                          ^
+Warning[Pe550]: variable "dev_addr" was set but never used
+    109            uint8 tmp[3];
+                         ^
+Warning[Pe550]: variable "tmp" was set but never used
+    110            dev_addr = 0xffff; 
+    111            opera_bit = buf[1]; // could be 1 2 3 4 5 6 ,回应信息和 0x01 一样，0x81打头
+    112            // 比如全部打开 0x02 0x02 0x01 ,全部关闭是0x02 0x02 0x02
+    113            tmp[0] = 0x02;
+    114            tmp[1] = 0x02;
+    115            tmp[2] = opera_bit;
+    116            
+    117            // wireless broadcast this tmp[3]
+    118            
+    119            
+    120          }
+    121          
+    122          static void dev_opera(uint8*buf)
+    123          {
+    124            uint8 dev_cnt; //device count
+    125            uint16 dev_addr; // device 地址
+                          ^
+Warning[Pe550]: variable "dev_addr" was set but never used
+    126            uint8 opera_bit;
+                         ^
+Warning[Pe550]: variable "opera_bit" was set but never used
+    127            uint8 stop_bit;
+    128            uint8 i,j;
+                           ^
+Warning[Pe550]: variable "j" was set but never used
+    129            
+    130            i = 0;
+    131            j = 0;
+    132            //0x01 0x?? ff ff xx ff ff xx ff ff xx
+    133            dev_cnt = buf[1];
+    134            for(i=0;i<dev_cnt;i++)
+    135            {
+    136              stop_bit = 2+i*3;
+    137              
+    138              dev_addr = BUILD_UINT16(buf[stop_bit], buf[ stop_bit + 1]);
+    139              opera_bit = stop_bit+2;
+    140            }
+    141            
+    142          }
+    143          
+    144          static void dim_return(uint8*buf) // 0x82 
+    145          {
+    146              uint16 short_addr;
+                            ^
+Warning[Pe550]: variable "short_addr" was set but never used
+    147              uint8 dims[4];
+                           ^
+Warning[Pe550]: variable "dims" was set but never used
+    148              
+    149              short_addr = BUILD_UINT16(buf[1],buf[2]);
+    150              dims[0] = buf[3];
+    151              dims[1] = buf[4];
+    152              dims[2] = buf[5];
+    153              dims[3] = buf[6];
+    154              
+    155          }
+    156          
+    157          static void opera_return(uint8*buf) // 0x81
+    158          {
+    159            uint16 short_addr;
+                          ^
+Warning[Pe550]: variable "short_addr" was set but never used
+    160            uint8 return_val;
+                         ^
+Warning[Pe550]: variable "return_val" was set but never used
+    161            
+    162            short_addr = BUILD_UINT16(buf[1], buf[2]);
+    163            return_val = buf[3];
+    164            
+    165          }
+    166          
+    167          static void plcbus(uint8*buf) // 0x06
+    168          {
+    169            uint8 i;
+    170            uint8 pc_bus[9];
+                         ^
+Warning[Pe550]: variable "pc_bus" was set but never used
+    171            for(i=0;i<9;i++)
+    172            {
+    173              pc_bus[i] = buf[i+1];
+    174            }
+    175            
+    176          }
+    177          
+    178          static void busplc(uint8*buf) // 0x06
+    179          {
+    180            uint8 pc_bus[9];
+                         ^
+Warning[Pe550]: variable "pc_bus" was set but never used
+    181            uint8 i;
+    182            for(i=0;i<9;i++)
+    183            {
+    184              pc_bus[i] = buf[i+1];
+    185            }
+    186          }
+    187          
+    188          static void plcbus_return(uint8*buf) // 0x86,eg:0x0a 0x86 + 9bytes
+    189          {
+    190            uint8 pc_bus[9];
+                         ^
+Warning[Pe550]: variable "pc_bus" was set but never used
+    191            uint8 i;
+    192            for(i=0;i<9;i++)
+    193            {
+    194              pc_bus[i] = buf[i+1];
+    195            }
+    196            
+    197          }
+    198          
+    199          static void start_warning(uint8*buf) // 0x04 ,example 0x03 0x04 ff ff
+    200          {
+    201            uint16 dev_addr;
+                          ^
+Warning[Pe550]: variable "dev_addr" was set but never used
+    202            dev_addr = BUILD_UINT16(buf[1],buf[2]);
+    203            
+    204          }
+    205          
+    206          static void start_warning_return(uint8*buf) // 0x84, eg: 0x4 0x84 ff ff 0x??
+    207          {
+    208            uint16 dev_addr;
+                          ^
+Warning[Pe550]: variable "dev_addr" was set but never used
+    209            uint8 opera_return;
+                         ^
+Warning[Pe550]: variable "opera_return" was set but never used
+    210            
+    211            dev_addr = BUILD_UINT16(buf[1],buf[2]);
+    212            opera_return = buf[3];
+    213            
+    214          }
+    215          
+    216          static void stop_warning(uint8*buf) //0x03, example 0x03 0x03 ff ff 
+    217          {
+    218            uint16 dev_addr;
+                          ^
+Warning[Pe550]: variable "dev_addr" was set but never used
+    219            dev_addr = BUILD_UINT16(buf[1], buf[2]);
+    220            
+    221          }
+    222          
+    223          static void stop_warning_return(uint8*buf) // 0x83 0x??
+    224          {
+    225              uint8 opera_return;
+                           ^
+Warning[Pe550]: variable "opera_return" was set but never used
+    226              opera_return = buf[1];
+    227              // 3 is ok, 4 is failed
+    228              
+    229          }
+    230          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    231          void send_dev_info(uint8 type)// when get command 0xAD
+   \                     send_dev_info:
+    232          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    233            uint16 short_addr;
+                          ^
+Warning[Pe550]: variable "short_addr" was set but never used
+    234            uint8 *ieeeAddr;
+    235            uint8 i;
+    236            uint8 arr[12];
+                         ^
+Warning[Pe550]: variable "arr" was set but never used
+    237            
+    238            ieeeAddr = NLME_GetExtAddr();
+   \   000004                ; Setup parameters for call to function NLME_GetExtAddr
+   \   000004   12....       LCALL   ??NLME_GetExtAddr?relay
+    239            
+    240            short_addr = _NIB.nwkDevAddress;
+    241            
+    242            arr[0] = 0x0b;
+    243            arr[1] = 0x05;
+    244            for( i = 0; i < 8; i++)
+    245            {
+    246              arr[i+2] = ieeeAddr[i];
+    247            }
+    248            arr[11] = type;
+    249            
+    250            /// now Send to gateway
+    251            
+    252          }
+   \   000007   02....       LJMP    ??Subroutine7_0 & 0xFFFF
+    253          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    254          void get_dev_info( uint8 *buf )
+   \                     get_dev_info:
+    255          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    256            // 0x05 mac short_addr type
+    257            // 1 8 2 1 == 12 bytes
+    258            // 0 1 2 3 4 5 6 7 8 9 10 11
+    259            uint16 short_addr;
+                          ^
+Warning[Pe550]: variable "short_addr" was set but never used
+    260            uint8 type;
+                         ^
+Warning[Pe550]: variable "type" was set but never used
+    261            uint8 ieeeAddr[9];
+                         ^
+Warning[Pe550]: variable "ieeeAddr" was set but never used
+    262            uint8 i;
+    263            
+    264            type = buf[11];
+    265            short_addr = BUILD_UINT16( buf[9], buf[10]);
+    266            
+    267            for(i=0;i<8;i++)
+    268            {
+    269              ieeeAddr[i] = buf[i+1];
+    270            }
+    271          
+    272          }
+   \   000000   02....       LJMP    ?BRET
+    273          
+    274          static void ir_cmd()
+    275          {
+    276            
+    277          }
+    278          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    279          static void reboot_zigbee(uint8*buf)
+   \                     reboot_zigbee:
+    280          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 4
+   \   000004   74FC         MOV     A,#-0x4
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    281            uint8 opera_bit;
+    282            uint8 tmp[4];
+    283            
+    284            opera_bit = buf[1];
+    285            
+    286            switch(opera_bit)
+   \   000009   8A82         MOV     DPL,R2
+   \   00000B   8B83         MOV     DPH,R3
+   \   00000D   A3           INC     DPTR
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   14           DEC     A
+   \   000010   600C         JZ      ??reboot_zigbee_0
+   \   000012   14           DEC     A
+   \   000013   6015         JZ      ??reboot_zigbee_1
+   \   000015   14           DEC     A
+   \   000016   6021         JZ      ??reboot_zigbee_2
+   \   000018   24FE         ADD     A,#-0x2
+   \   00001A   602C         JZ      ??reboot_zigbee_3
+   \   00001C   806A         SJMP    ??reboot_zigbee_4
+    287            {
+    288            case 0x01://表示清空 NV_RESTORE 保存的内容，然后系统重启
+    289              
+    290              SystemReset();
+   \                     ??reboot_zigbee_0:
+   \   00001E   C2AF         CLR     0xa8.7
+   \   000020   C2AF         CLR     0xa8.7
+   \   000022   75C9AB       MOV     0xc9,#-0x55
+   \   000025   75C95B       MOV     0xc9,#0x5b
+   \                     ??reboot_zigbee_5:
+   \   000028   80FE         SJMP    ??reboot_zigbee_5
+    291              break;
+    292            case 0x02://表示清空 NV_RESTORE 保存的内容，将网关设置为“协调器”，然后系统重启
+    293                
+    294                set_coordi();
+   \                     ??reboot_zigbee_1:
+   \   00002A                ; Setup parameters for call to function set_coordi
+   \   00002A   12....       LCALL   ??set_coordi?relay
+    295                SystemReset();
+   \   00002D   C2AF         CLR     0xa8.7
+   \   00002F   C2AF         CLR     0xa8.7
+   \   000031   75C9AB       MOV     0xc9,#-0x55
+   \   000034   75C95B       MOV     0xc9,#0x5b
+   \                     ??reboot_zigbee_6:
+   \   000037   80FE         SJMP    ??reboot_zigbee_6
+    296              break;
+    297            case 0x03://表示清空 NV_RESTORE 保存的内容，将网关设置为“路由”，然后系统重启
+    298                set_router();
+   \                     ??reboot_zigbee_2:
+   \   000039                ; Setup parameters for call to function set_router
+   \   000039   12....       LCALL   ??set_router?relay
+    299                SystemReset();
+   \   00003C   C2AF         CLR     0xa8.7
+   \   00003E   C2AF         CLR     0xa8.7
+   \   000040   75C9AB       MOV     0xc9,#-0x55
+   \   000043   75C95B       MOV     0xc9,#0x5b
+   \                     ??reboot_zigbee_7:
+   \   000046   80FE         SJMP    ??reboot_zigbee_7
+    300              break;
+    301            case 0x04://表示写模块panid；后面跟panid参数；
+    302                      //04     A8    04      yy          xx 
+    303                      // 长度  命令  写指令 panid高字节 panid低字节
+    304                
+    305              break;
+    306            case 0x05:
+    307                  //03    95       yy    xx
+    308                  tmp[0] = 0x03;
+   \                     ??reboot_zigbee_3:
+   \   000048   85..82       MOV     DPL,?XSP + 0
+   \   00004B   85..83       MOV     DPH,?XSP + 1
+   \   00004E   7403         MOV     A,#0x3
+   \   000050   F0           MOVX    @DPTR,A
+    309                  tmp[1] = 0x95;
+   \   000051   7401         MOV     A,#0x1
+   \   000053   12....       LCALL   ?XSTACK_DISP0_8
+   \   000056   7495         MOV     A,#-0x6b
+   \   000058   F0           MOVX    @DPTR,A
+    310                  tmp[2] = HI_UINT16(_NIB.nwkPanId);
+   \   000059   90....       MOV     DPTR,#_NIB + 34
+   \   00005C   E0           MOVX    A,@DPTR
+   \   00005D   C0E0         PUSH    A
+   \   00005F   7402         MOV     A,#0x2
+   \   000061   12....       LCALL   ?XSTACK_DISP0_8
+   \   000064   D0E0         POP     A
+   \   000066   F0           MOVX    @DPTR,A
+    311                  tmp[3] = LO_UINT16(_NIB.nwkPanId);
+   \   000067   90....       MOV     DPTR,#_NIB + 33
+   \   00006A   E0           MOVX    A,@DPTR
+   \   00006B   C0E0         PUSH    A
+   \   00006D   7403         MOV     A,#0x3
+   \   00006F   12....       LCALL   ?XSTACK_DISP0_8
+   \   000072   D0E0         POP     A
+   \   000074   F0           MOVX    @DPTR,A
+    312                  
+    313                  HalUARTWrite(SER_PORT,tmp, 4);
+   \   000075                ; Setup parameters for call to function HalUARTWrite
+   \   000075   7C04         MOV     R4,#0x4
+   \   000077   7D00         MOV     R5,#0x0
+   \   000079   85..82       MOV     DPL,?XSP + 0
+   \   00007C   85..83       MOV     DPH,?XSP + 1
+   \   00007F   AA82         MOV     R2,DPL
+   \   000081   AB83         MOV     R3,DPH
+   \   000083   7900         MOV     R1,#0x0
+   \   000085   12....       LCALL   ??HalUARTWrite?relay
+    314              break;
+    315            default:break;
+    316            
+    317            }
+    318          }
+   \                     ??reboot_zigbee_4:
+   \   000088   7404         MOV     A,#0x4
+   \   00008A   02....       LJMP    ?Subroutine0 & 0xFFFF
+   \   00008D                REQUIRE _A_IEN0
+   \   00008D                REQUIRE WDCTL
+    319          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    320          void gateway_to_pda(uint16 shortaddr, uint8*buf, uint8 len)// 这儿的buf也 是一完整的协议data
+   \                     gateway_to_pda:
+    321          {
+   \   000000   74F0         MOV     A,#-0x10
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 16
+   \   000005                ; Auto size: 0
+   \   000005   8A..         MOV     ?V0 + 4,R2
+   \   000007   8B..         MOV     ?V0 + 5,R3
+   \   000009   8C..         MOV     ?V0 + 0,R4
+   \   00000B   8D..         MOV     ?V0 + 1,R5
+   \   00000D   89..         MOV     ?V0 + 2,R1
+    322             uint8*mbuf;
+    323             uint8 i;
+    324             mbuf = osal_mem_alloc( (len+4)*sizeof(uint8));
+   \   00000F                ; Setup parameters for call to function osal_mem_alloc
+   \   00000F   E9           MOV     A,R1
+   \   000010   2404         ADD     A,#0x4
+   \   000012   FA           MOV     R2,A
+   \   000013   E4           CLR     A
+   \   000014   3400         ADDC    A,#0x0
+   \   000016   FB           MOV     R3,A
+   \   000017   12....       LCALL   ??osal_mem_alloc?relay
+   \   00001A   8A..         MOV     ?V0 + 6,R2
+   \   00001C   8B..         MOV     ?V0 + 7,R3
+   \   00001E   AE..         MOV     R6,?V0 + 6
+   \   000020   AF..         MOV     R7,?V0 + 7
+    325             
+    326             mbuf[0] = len+3;
+   \   000022   7403         MOV     A,#0x3
+   \   000024   25..         ADD     A,?V0 + 2
+   \   000026   8E82         MOV     DPL,R6
+   \   000028   8F83         MOV     DPH,R7
+   \   00002A   F0           MOVX    @DPTR,A
+    327             mbuf[1] = 0x08;
+   \   00002B   A3           INC     DPTR
+   \   00002C   7408         MOV     A,#0x8
+   \   00002E   F0           MOVX    @DPTR,A
+    328             
+    329             mbuf[2] = HI_UINT16(shortaddr);
+   \   00002F   8E82         MOV     DPL,R6
+   \   000031   8F83         MOV     DPH,R7
+   \   000033   A3           INC     DPTR
+   \   000034   A3           INC     DPTR
+   \   000035   E5..         MOV     A,?V0 + 5
+   \   000037   F0           MOVX    @DPTR,A
+    330             mbuf[3] = LO_UINT16(shortaddr);
+   \   000038   8E82         MOV     DPL,R6
+   \   00003A   8F83         MOV     DPH,R7
+   \   00003C   A3           INC     DPTR
+   \   00003D   A3           INC     DPTR
+   \   00003E   A3           INC     DPTR
+   \   00003F   E5..         MOV     A,?V0 + 4
+   \   000041   F0           MOVX    @DPTR,A
+    331             
+    332             for( i = 0; i < len; i++)
+   \   000042   7A00         MOV     R2,#0x0
+   \   000044   8023         SJMP    ??gateway_to_pda_0
+    333             {
+    334               mbuf[i+4] = buf[i];
+   \                     ??gateway_to_pda_1:
+   \   000046   8A82         MOV     DPL,R2
+   \   000048   A882         MOV     R0,DPL
+   \   00004A   E5..         MOV     A,?V0 + 0
+   \   00004C   28           ADD     A,R0
+   \   00004D   F582         MOV     DPL,A
+   \   00004F   E5..         MOV     A,?V0 + 1
+   \   000051   3400         ADDC    A,#0x0
+   \   000053   F583         MOV     DPH,A
+   \   000055   E0           MOVX    A,@DPTR
+   \   000056   C0E0         PUSH    A
+   \   000058   EE           MOV     A,R6
+   \   000059   28           ADD     A,R0
+   \   00005A   F582         MOV     DPL,A
+   \   00005C   EF           MOV     A,R7
+   \   00005D   3400         ADDC    A,#0x0
+   \   00005F   F583         MOV     DPH,A
+   \   000061   A3           INC     DPTR
+   \   000062   A3           INC     DPTR
+   \   000063   A3           INC     DPTR
+   \   000064   A3           INC     DPTR
+   \   000065   D0E0         POP     A
+   \   000067   F0           MOVX    @DPTR,A
+    335             }
+   \   000068   0A           INC     R2
+   \                     ??gateway_to_pda_0:
+   \   000069   EA           MOV     A,R2
+   \   00006A   C3           CLR     C
+   \   00006B   95..         SUBB    A,?V0 + 2
+   \   00006D   40D7         JC      ??gateway_to_pda_1
+    336             
+    337             // uart to send
+    338             if( HalUARTWrite(0,mbuf, len+4) > 0)
+   \   00006F                ; Setup parameters for call to function HalUARTWrite
+   \   00006F   85....       MOV     ?V0 + 0,?V0 + 2
+   \   000072   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000075   7900         MOV     R1,#0x0
+   \   000077   12....       LCALL   ??HalUARTWrite?relay
+   \   00007A   8B..         MOV     ?V0 + 1,R3
+   \   00007C   EA           MOV     A,R2
+   \   00007D   45..         ORL     A,?V0 + 1
+   \   00007F   700A         JNZ     ??gateway_to_pda_2
+    339             {
+    340               osal_mem_free(mbuf);
+   \   000081                ; Setup parameters for call to function osal_mem_free
+    341             }else
+    342             {
+    343               HalUARTWrite(SER_PORT,mbuf, len+4);
+   \   000081                ; Setup parameters for call to function HalUARTWrite
+   \   000081   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_3:
+   \   000084   EF           MOV     A,R7
+   \   000085   FB           MOV     R3,A
+   \   000086   7900         MOV     R1,#0x0
+   \   000088   12....       LCALL   ??HalUARTWrite?relay
+    344               osal_mem_free(mbuf);
+   \   00008B                ; Setup parameters for call to function osal_mem_free
+   \                     ??gateway_to_pda_2:
+   \   00008B   EE           MOV     A,R6
+   \   00008C   FA           MOV     R2,A
+   \   00008D   EF           MOV     A,R7
+   \   00008E   FB           MOV     R3,A
+   \   00008F   12....       LCALL   ??osal_mem_free?relay
+    345             }
+    346             
+    347             return;
+   \   000092   7F08         MOV     R7,#0x8
+   \   000094   02....       LJMP    ?BANKED_LEAVE_XDATA
+    348          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   E5..         MOV     A,?V0 + 0
+   \   000002   2404         ADD     A,#0x4
+   \   000004   FC           MOV     R4,A
+   \   000005   E4           CLR     A
+   \   000006   3400         ADDC    A,#0x0
+   \   000008   FD           MOV     R5,A
+   \   000009   EE           MOV     A,R6
+   \   00000A   FA           MOV     R2,A
+   \   00000B   22           RET
+    349          
+    350          static void pda_to_gateway(uint8*buf)  // 0x08, 这儿要全部的数据，开头的len+3可以段定后面数据的长度
+    351          {
+    352            uint8 data_len;
+    353            uint8*data;
+    354            data = &buf[4];
+    355            //分析这个data 
+    356            data_len = buf[0] - 3;
+    357            
+    358            ser_process(data, data_len);
+    359            
+    360          }
+    361          
+    362          static void start_dev(void)
+    363          {
+    364            
+    365           #if defined ( HOLD_AUTO_START )
+    366              ZDOInitDevice(0);
+    367              osal_nv_item_init( 0x0201, sizeof(start_flag), &start_flag);
+    368              start_flag = 1;
+    369              osal_nv_write(0x0201,0,  sizeof(start_flag), &start_flag);
+    370              
+    371           #endif     
+    372          
+    373          }
+    374          
+    375          static void hd_alarm(uint8*buf)
+    376          {
+    377            //流程是 上位机应用程序串口发过来  0x04 0xA9 XX XX 0x01/0x02，
+    378            //zigbee收到，转发 给 XX XX 数据 0x02 0xA9 0x01/0x02
+    379            //报警器XX XX收到后判断，0x01：开启报警，0x02：关闭报警
+    380            uint16 short_addr;
+                          ^
+Warning[Pe550]: variable "short_addr" was set but never used
+    381            uint8 tmp[3];
+                         ^
+Warning[Pe550]: variable "tmp" was set but never used
+    382            short_addr = BUILD_UINT16(buf[1],buf[2]);
+    383            tmp[0] = 0x02;
+    384            tmp[1] = 0xa9;
+    385            tmp[2] = buf[3];
+    386            
+    387            // wireless send data to XX XX 
+    388          }
+    389          
+    390          static void check_alive(void)
+    391          {
+    392            uint8 tmp[2];
+    393            tmp[0] = 0x01;
+    394            tmp[1] = 0x90;
+    395            
+    396            /// serial port send back ,tmp[2];
+    397            // or wireless
+    398            HalUARTWrite(SER_PORT,tmp, 2);
+    399            
+    400          }
+    401          
+    402          static void profile_panel_number_set(uint8*buf)
+    403          {
+    404            uint16 short_addr;
+                          ^
+Warning[Pe550]: variable "short_addr" was set but never used
+
+  static void all_dev_opera(uint8 * buf) // 所有设备开关控制 0x02
+              ^
+"D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WeiYi\Source\protocol.c",105  Warning[Pe177]: 
+          function "all_dev_opera" was declared but never referenced
+
+  static void plcbus(uint8*buf) // 0x06
+              ^
+"D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WeiYi\Source\protocol.c",167  Warning[Pe177]: 
+          function "plcbus" was declared but never referenced
+
+  static void busplc(uint8*buf) // 0x06
+              ^
+"D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WeiYi\Source\protocol.c",178  Warning[Pe177]: 
+          function "busplc" was declared but never referenced
+
+  static void plcbus_return(uint8*buf) // 0x86,eg:0x0a 0x86 + 9bytes
+              ^
+"D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WeiYi\Source\protocol.c",188  Warning[Pe177]: 
+          function "plcbus_return" was declared but never referenced
+
+  static void start_warning(uint8*buf) // 0x04 ,example 0x03 0x04 ff ff
+              ^
+"D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WeiYi\Source\protocol.c",199  Warning[Pe177]: 
+          function "start_warning" was declared but never referenced
+
+  static void start_warning_return(uint8*buf) // 0x84, eg: 0x4 0x84 ff ff 0x??
+              ^
+"D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WeiYi\Source\protocol.c",206  Warning[Pe177]: 
+          function "start_warning_return" was declared but never referenced
+
+  static void stop_warning(uint8*buf) //0x03, example 0x03 0x03 ff ff 
+              ^
+"D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WeiYi\Source\protocol.c",216  Warning[Pe177]: 
+          function "stop_warning" was declared but never referenced
+
+  static void stop_warning_return(uint8*buf) // 0x83 0x??
+              ^
+"D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WeiYi\Source\protocol.c",223  Warning[Pe177]: 
+          function "stop_warning_return" was declared but never referenced
+
+  static void ir_cmd()
+              ^
+"D:\Texas Instruments\ZStack-CC2530-2.5.1a\Projects\zstack\Samples\WeiYi\Source\protocol.c",274  Warning[Pe177]: 
+          function "ir_cmd" was declared but never referenced
+    405            short_addr = BUILD_UINT16(buf[2],buf[3]);
+    406            
+    407            //wireless send buf to short_addr 
+    408          }
+    409          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    410          void ser_process(uint8*buf,uint8 read_len) // read_len is the length of buf, keep in range,max 255
+   \                     ser_process:
+    411          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 2
+   \   000005   74FE         MOV     A,#-0x2
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+    412            
+    413                  if(buf[0] == 0x01 && buf[1] == 0xa7) // 中讯威易
+   \   00000E   8E82         MOV     DPL,R6
+   \   000010   8F83         MOV     DPH,R7
+   \   000012   E0           MOVX    A,@DPTR
+   \   000013   6401         XRL     A,#0x1
+   \   000015   704C         JNZ     ??ser_process_0
+   \   000017   A3           INC     DPTR
+   \   000018   E0           MOVX    A,@DPTR
+   \   000019   64A7         XRL     A,#0xa7
+   \   00001B   7046         JNZ     ??ser_process_0
+    414                  {
+    415                      start_dev();
+   \   00001D                ; Setup parameters for call to function ZDOInitDevice
+   \   00001D   7A00         MOV     R2,#0x0
+   \   00001F   7B00         MOV     R3,#0x0
+   \   000021   12....       LCALL   ??ZDOInitDevice?relay
+   \   000024                ; Setup parameters for call to function osal_nv_item_init
+   \   000024   75....       MOV     ?V0 + 0,#start_flag & 0xff
+   \   000027   75....       MOV     ?V0 + 1,#(start_flag >> 8) & 0xff
+   \   00002A   78..         MOV     R0,#?V0 + 0
+   \   00002C   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00002F   7C01         MOV     R4,#0x1
+   \   000031   7D00         MOV     R5,#0x0
+   \   000033   7A01         MOV     R2,#0x1
+   \   000035   7B02         MOV     R3,#0x2
+   \   000037   12....       LCALL   ??osal_nv_item_init?relay
+   \   00003A   7402         MOV     A,#0x2
+   \   00003C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00003F   90....       MOV     DPTR,#start_flag
+   \   000042   7401         MOV     A,#0x1
+   \   000044   F0           MOVX    @DPTR,A
+   \   000045                ; Setup parameters for call to function osal_nv_write
+   \   000045   78..         MOV     R0,#?V0 + 0
+   \   000047   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00004A   75..01       MOV     ?V0 + 0,#0x1
+   \   00004D   75..00       MOV     ?V0 + 1,#0x0
+   \   000050   78..         MOV     R0,#?V0 + 0
+   \   000052   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000055   7C00         MOV     R4,#0x0
+   \   000057   7D00         MOV     R5,#0x0
+   \   000059   7A01         MOV     R2,#0x1
+   \   00005B   7B02         MOV     R3,#0x2
+   \   00005D   12....       LCALL   ??Subroutine10_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_8:
+   \   000060   12....       LCALL   ?DEALLOC_XSTACK8
+    416                  }
+    417                  
+    418                  if(buf[1] == 0x01) // 对单个或多个设备（灯光、电器、红外、烟感、门磁等）进行开关或状态查询。
+   \                     ??ser_process_0:
+   \   000063   8E82         MOV     DPL,R6
+   \   000065   8F83         MOV     DPH,R7
+   \   000067   A3           INC     DPTR
+   \   000068   E0           MOVX    A,@DPTR
+   \   000069   6401         XRL     A,#0x1
+   \   00006B   8E82         MOV     DPL,R6
+   \   00006D   8F83         MOV     DPH,R7
+   \   00006F   A3           INC     DPTR
+   \   000070   700D         JNZ     ??ser_process_1
+    419                  {
+    420                    dev_opera( &buf[1]);
+   \   000072   A3           INC     DPTR
+   \   000073   E0           MOVX    A,@DPTR
+   \   000074   F9           MOV     R1,A
+   \   000075   7800         MOV     R0,#0x0
+   \                     ??ser_process_2:
+   \   000077   E8           MOV     A,R0
+   \   000078   C3           CLR     C
+   \   000079   99           SUBB    A,R1
+   \   00007A   505D         JNC     ??ser_process_3
+   \   00007C   08           INC     R0
+   \   00007D   80F8         SJMP    ??ser_process_2
+    421                  }
+    422                  
+    423                  if(buf[1] == 0x81) // 上面指令的返回
+    424                  {
+    425                      opera_return( &buf[1]);          
+    426                  }
+    427                  
+    428                  if(buf[1] == 0x82) // 调光设备的返回  07 82 XX XX   dim1    dim2   dim3   dim4
+    429                  {
+    430                    dim_return( &buf[1]);
+    431                  }
+    432                  
+    433                  if(buf[1] == 0x06) // pcbus
+    434                  {
+    435                    //plcbus(&buf[1]);
+    436                  }
+    437                  
+    438                  if(buf[1] == 0xa8) // 重启 zigbee 模块  0x02 0xa8 0x??
+   \                     ??ser_process_1:
+   \   00007F   E0           MOVX    A,@DPTR
+   \   000080   64A8         XRL     A,#0xa8
+   \   000082   700C         JNZ     ??ser_process_4
+    439                  {
+    440                    reboot_zigbee(&buf[1]);
+   \   000084                ; Setup parameters for call to function reboot_zigbee
+   \   000084   8E82         MOV     DPL,R6
+   \   000086   8F83         MOV     DPH,R7
+   \   000088   A3           INC     DPTR
+   \   000089   AA82         MOV     R2,DPL
+   \   00008B   AB83         MOV     R3,DPH
+   \   00008D   12....       LCALL   ??reboot_zigbee?relay
+    441                  }
+    442                  if(buf[1] == 0x08)
+   \                     ??ser_process_4:
+   \   000090   8E82         MOV     DPL,R6
+   \   000092   8F83         MOV     DPH,R7
+   \   000094   A3           INC     DPTR
+   \   000095   E0           MOVX    A,@DPTR
+   \   000096   6408         XRL     A,#0x8
+   \   000098   7013         JNZ     ??ser_process_5
+    443                  {
+    444                    pda_to_gateway(buf);
+   \   00009A                ; Setup parameters for call to function ser_process
+   \   00009A   8E82         MOV     DPL,R6
+   \   00009C   8F83         MOV     DPH,R7
+   \   00009E   E0           MOVX    A,@DPTR
+   \   00009F   24FD         ADD     A,#-0x3
+   \   0000A1   F9           MOV     R1,A
+   \   0000A2   EE           MOV     A,R6
+   \   0000A3   2404         ADD     A,#0x4
+   \   0000A5   FA           MOV     R2,A
+   \   0000A6   EF           MOV     A,R7
+   \   0000A7   3400         ADDC    A,#0x0
+   \   0000A9   FB           MOV     R3,A
+   \   0000AA   12....       LCALL   ??ser_process?relay
+    445                  }
+    446                  
+    447                  if(buf[1] == 0xa9) // 高分贝报警器报警
+    448                  {
+    449                    hd_alarm(&buf[1]);
+    450                  }
+    451                  
+    452                  if(buf[1] == 0x89) // check it node is alive
+   \                     ??ser_process_5:
+   \   0000AD   8E82         MOV     DPL,R6
+   \   0000AF   8F83         MOV     DPH,R7
+   \   0000B1   A3           INC     DPTR
+   \   0000B2   E0           MOVX    A,@DPTR
+   \   0000B3   6489         XRL     A,#0x89
+   \   0000B5   7022         JNZ     ??ser_process_3
+    453                  {
+    454                    check_alive();
+   \   0000B7   85..82       MOV     DPL,?XSP + 0
+   \   0000BA   85..83       MOV     DPH,?XSP + 1
+   \   0000BD   7401         MOV     A,#0x1
+   \   0000BF   F0           MOVX    @DPTR,A
+   \   0000C0   12....       LCALL   ?XSTACK_DISP0_8
+   \   0000C3   7490         MOV     A,#-0x70
+   \   0000C5   F0           MOVX    @DPTR,A
+   \   0000C6                ; Setup parameters for call to function HalUARTWrite
+   \   0000C6   7C02         MOV     R4,#0x2
+   \   0000C8   7D00         MOV     R5,#0x0
+   \   0000CA   85..82       MOV     DPL,?XSP + 0
+   \   0000CD   85..83       MOV     DPH,?XSP + 1
+   \   0000D0   AA82         MOV     R2,DPL
+   \   0000D2   AB83         MOV     R3,DPH
+   \   0000D4   7900         MOV     R1,#0x0
+   \   0000D6   12....       LCALL   ??HalUARTWrite?relay
+    455                  }
+    456                  
+    457                  if(buf[1] == 0xb0) //场景面板的编号设置
+    458                  {
+    459                    profile_panel_number_set(buf);
+    460                  }
+    461          }
+   \                     ??ser_process_3:
+   \   0000D9   02....       LJMP    ?Subroutine3 & 0xFFFF
+    462          
+    463          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    464          void wir_process(uint8*buf ,uint8 read_len)
+   \                     wir_process:
+    465          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    466            
+    467          }
+   \   000000   02....       LJMP    ?BRET
+    468          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    469          uint8 calcFCS(uint8 *pBuf, uint8 len)
+   \                     calcFCS:
+    470          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+   \   000004   E9           MOV     A,R1
+   \   000005   F8           MOV     R0,A
+    471            uint8 rtrn = 0;
+   \   000006   7900         MOV     R1,#0x0
+   \   000008   800D         SJMP    ??calcFCS_0
+    472          
+    473            while (len--)
+    474            {
+    475              rtrn ^= *pBuf++;
+   \                     ??calcFCS_1:
+   \   00000A   8A82         MOV     DPL,R2
+   \   00000C   8B83         MOV     DPH,R3
+   \   00000E   E0           MOVX    A,@DPTR
+   \   00000F   C9           XCH     A,R1
+   \   000010   69           XRL     A,R1
+   \   000011   F9           MOV     R1,A
+   \   000012   A3           INC     DPTR
+   \   000013   AA82         MOV     R2,DPL
+   \   000015   AB83         MOV     R3,DPH
+    476            }
+   \                     ??calcFCS_0:
+   \   000017   E8           MOV     A,R0
+   \   000018   FC           MOV     R4,A
+   \   000019   74FF         MOV     A,#-0x1
+   \   00001B   2C           ADD     A,R4
+   \   00001C   18           DEC     R0
+   \   00001D   04           INC     A
+   \   00001E   70EA         JNZ     ??calcFCS_1
+    477          
+    478            return rtrn;
+   \   000020   02....       LJMP    ??Subroutine7_0 & 0xFFFF
+    479          }
+    480          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    481          void sysPingRsp(void)
+   \                     sysPingRsp:
+    482          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 7
+   \   000004   74F9         MOV     A,#-0x7
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+    483            uint8 pBuf[7];
+    484            
+    485            // Start of Frame Delimiter
+    486            pBuf[0] = CPT_SOP;
+   \   000009   85..82       MOV     DPL,?XSP + 0
+   \   00000C   85..83       MOV     DPH,?XSP + 1
+   \   00000F   74FE         MOV     A,#-0x2
+   \   000011   F0           MOVX    @DPTR,A
+    487            
+    488            // Length
+    489            pBuf[1] = 2; 
+   \   000012   7401         MOV     A,#0x1
+   \   000014   12....       LCALL   ?XSTACK_DISP0_8
+   \   000017   7402         MOV     A,#0x2
+   \   000019   F0           MOVX    @DPTR,A
+    490            
+    491            // Command type
+    492            pBuf[2] = LO_UINT16(SYS_PING_RESPONSE); 
+   \   00001A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001D   7461         MOV     A,#0x61
+   \   00001F   F0           MOVX    @DPTR,A
+    493            pBuf[3] = HI_UINT16(SYS_PING_RESPONSE);
+   \   000020   7403         MOV     A,#0x3
+   \   000022   12....       LCALL   ?XSTACK_DISP0_8
+   \   000025   7401         MOV     A,#0x1
+   \   000027   F0           MOVX    @DPTR,A
+    494            
+    495            // Stack profile
+    496            pBuf[4] = LO_UINT16(STACK_PROFILE);
+   \   000028   7404         MOV     A,#0x4
+   \   00002A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002D   7441         MOV     A,#0x41
+   \   00002F   F0           MOVX    @DPTR,A
+    497            pBuf[4+ 1] = HI_UINT16(STACK_PROFILE);
+   \   000030   7405         MOV     A,#0x5
+   \   000032   12....       LCALL   ?XSTACK_DISP0_8
+   \   000035   E4           CLR     A
+   \   000036   F0           MOVX    @DPTR,A
+    498            
+    499            // Frame Check Sequence
+    500            pBuf[7 - 1] = calcFCS(&pBuf[1], (7 - 2));
+   \   000037                ; Setup parameters for call to function calcFCS
+   \   000037   7905         MOV     R1,#0x5
+   \   000039   04           INC     A
+   \   00003A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00003D   AA82         MOV     R2,DPL
+   \   00003F   AB83         MOV     R3,DPH
+   \   000041   12....       LCALL   ??calcFCS?relay
+   \   000044   7406         MOV     A,#0x6
+   \   000046   12....       LCALL   ?XSTACK_DISP0_8
+   \   000049   E9           MOV     A,R1
+   \   00004A   F0           MOVX    @DPTR,A
+    501            
+    502            // Write frame to UART
+    503            UART_Send_String (pBuf, 7);
+   \   00004B                ; Setup parameters for call to function UART_Send_String
+   \   00004B   7C07         MOV     R4,#0x7
+   \   00004D   7D00         MOV     R5,#0x0
+   \   00004F   85..82       MOV     DPL,?XSP + 0
+   \   000052   85..83       MOV     DPH,?XSP + 1
+   \   000055   AA82         MOV     R2,DPL
+   \   000057   AB83         MOV     R3,DPH
+   \   000059   12....       LCALL   ??UART_Send_String?relay
+    504          }
+   \   00005C   7407         MOV     A,#0x7
+   \   00005E   02....       LJMP    ?Subroutine0 & 0xFFFF
+    505          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    506          void sysPingReqRcvd(void)
+   \                     sysPingReqRcvd:
+    507          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    508             sysPingRsp();
+   \   000004                ; Setup parameters for call to function sysPingRsp
+   \   000004   12....       LCALL   ??sysPingRsp?relay
+    509          }
+   \   000007   02....       LJMP    ??Subroutine7_0 & 0xFFFF
+    510          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    511          void delete_asso( uint8 index)
+   \                     delete_asso:
+    512          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 18
+   \   000005   74EE         MOV     A,#-0x12
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   E9           MOV     A,R1
+   \   00000B   FE           MOV     R6,A
+    513              uint8 i;
+    514              AddrMgrEntry_t addrEntry;
+    515              NLME_LeaveReq_t req;
+    516            
+    517                  addrEntry.user = ADDRMGR_USER_DEFAULT;
+   \   00000C   7405         MOV     A,#0x5
+   \   00000E   12....       LCALL   ?XSTACK_DISP0_8
+   \   000011   E4           CLR     A
+   \   000012   F0           MOVX    @DPTR,A
+    518                  addrEntry.index = index;
+   \   000013   EE           MOV     A,R6
+   \   000014   F8           MOV     R0,A
+   \   000015   7410         MOV     A,#0x10
+   \   000017   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001A   E8           MOV     A,R0
+   \   00001B   F0           MOVX    @DPTR,A
+   \   00001C   A3           INC     DPTR
+   \   00001D   E4           CLR     A
+   \   00001E   F0           MOVX    @DPTR,A
+    519                  
+    520                  if (AddrMgrEntryGet( &addrEntry ))
+   \   00001F                ; Setup parameters for call to function AddrMgrEntryGet
+   \   00001F   7405         MOV     A,#0x5
+   \   000021   12....       LCALL   ?XSTACK_DISP0_8
+   \   000024   AA82         MOV     R2,DPL
+   \   000026   AB83         MOV     R3,DPH
+   \   000028   12....       LCALL   ??AddrMgrEntryGet?relay
+   \   00002B   E9           MOV     A,R1
+   \   00002C   7006         JNZ     ??delete_asso_0
+    521                  {
+    522                    for (i = 0; i < Z_EXTADDR_LEN; i++ )
+    523                    {
+    524                       if ( addrEntry.extAddr != 0 ){ break;}
+    525                    }
+    526                  }
+    527                  if(i < Z_EXTADDR_LEN){
+   \   00002E   EF           MOV     A,R7
+   \   00002F   C3           CLR     C
+   \   000030   9408         SUBB    A,#0x8
+   \   000032   5032         JNC     ??delete_asso_1
+    528                    // Remove device
+    529                    req.extAddr = addrEntry.extAddr;
+   \                     ??delete_asso_0:
+   \   000034   7408         MOV     A,#0x8
+   \   000036   12....       LCALL   ?XSTACK_DISP0_8
+   \   000039   A882         MOV     R0,DPL
+   \   00003B   A983         MOV     R1,DPH
+   \   00003D   85..82       MOV     DPL,?XSP + 0
+   \   000040   85..83       MOV     DPH,?XSP + 1
+   \   000043   E8           MOV     A,R0
+   \   000044   F0           MOVX    @DPTR,A
+   \   000045   A3           INC     DPTR
+   \   000046   E9           MOV     A,R1
+   \   000047   F0           MOVX    @DPTR,A
+    530                    req.removeChildren = TRUE;
+   \   000048   7402         MOV     A,#0x2
+   \   00004A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004D   7401         MOV     A,#0x1
+   \   00004F   F0           MOVX    @DPTR,A
+    531                    req.rejoin = TRUE;
+   \   000050   7403         MOV     A,#0x3
+   \   000052   12....       LCALL   ?XSTACK_DISP0_8
+   \   000055   7401         MOV     A,#0x1
+   \   000057   F0           MOVX    @DPTR,A
+    532                    req.silent = FALSE;
+   \   000058   7404         MOV     A,#0x4
+   \   00005A   12....       LCALL   ?XSTACK_DISP0_8
+   \   00005D   E4           CLR     A
+   \   00005E   12....       LCALL   ?Subroutine4 & 0xFFFF
+    533          
+    534                    NLME_LeaveReq( &req );
+    535                  }else{
+   \                     ??CrossCallReturnLabel_1:
+   \   000061   12....       LCALL   ??NLME_LeaveReq?relay
+   \   000064   800F         SJMP    ??delete_asso_2
+    536                    AssocRemove(addrEntry.extAddr);
+   \                     ??delete_asso_1:
+   \   000066                ; Setup parameters for call to function AssocRemove
+   \   000066   7408         MOV     A,#0x8
+   \   000068   12....       LCALL   ?XSTACK_DISP0_8
+   \   00006B   AA82         MOV     R2,DPL
+   \   00006D   AB83         MOV     R3,DPH
+   \   00006F   12....       LCALL   ??AssocRemove?relay
+    537                    ZDApp_NVUpdate();
+   \   000072                ; Setup parameters for call to function ZDApp_NVUpdate
+   \   000072   12....       LCALL   ??ZDApp_NVUpdate?relay
+    538                  } 
+    539          }
+   \                     ??delete_asso_2:
+   \   000075   7412         MOV     A,#0x12
+   \   000077   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00007A   02....       LJMP    ?Subroutine1 & 0xFFFF
+    540          
+    541          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ??uprint?relay
+   \   000003   7401         MOV     A,#0x1
+   \   000005                REQUIRE ??Subroutine8_0
+   \   000005                ; // Fall through to label ??Subroutine8_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   7C00         MOV     R4,#0x0
+   \   000002   7D00         MOV     R5,#0x0
+   \   000004   7A87         MOV     R2,#-0x79
+   \   000006                REQUIRE ??Subroutine9_0
+   \   000006                ; // Fall through to label ??Subroutine9_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    542          void set_coordi(void)
+   \                     set_coordi:
+    543          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    544              uint8 logicalType;
+    545          
+    546                  osal_nv_item_init( ZCD_NV_LOGICAL_TYPE, sizeof(logicalType), &logicalType );
+   \   00000A                ; Setup parameters for call to function osal_nv_item_init
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   8582..       MOV     ?V0 + 0,DPL
+   \   000013   8583..       MOV     ?V0 + 1,DPH
+   \   000016   78..         MOV     R0,#?V0 + 0
+   \   000018   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00001B   7C01         MOV     R4,#0x1
+   \   00001D   7D00         MOV     R5,#0x0
+   \   00001F   7A87         MOV     R2,#-0x79
+   \   000021   7B00         MOV     R3,#0x0
+   \   000023   12....       LCALL   ??osal_nv_item_init?relay
+   \   000026   7402         MOV     A,#0x2
+   \   000028   12....       LCALL   ?DEALLOC_XSTACK8
+    547                  logicalType = ZG_DEVICETYPE_COORDINATOR;
+   \   00002B   85..82       MOV     DPL,?XSP + 0
+   \   00002E   85..83       MOV     DPH,?XSP + 1
+   \   000031   E4           CLR     A
+   \   000032   F0           MOVX    @DPTR,A
+    548                  if( osal_nv_write( ZCD_NV_LOGICAL_TYPE, 0 ,sizeof(logicalType), &logicalType) != ZSUCCESS)
+   \   000033                ; Setup parameters for call to function osal_nv_write
+   \   000033   78..         MOV     R0,#?V0 + 0
+   \   000035   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000038   75..01       MOV     ?V0 + 0,#0x1
+   \   00003B   75..00       MOV     ?V0 + 1,#0x0
+   \   00003E   78..         MOV     R0,#?V0 + 0
+   \   000040   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000043   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_4:
+   \   000046   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000049   E9           MOV     A,R1
+   \   00004A   6006         JZ      ??set_coordi_0
+    549                  {
+    550                    uprint("set device to coordi failed");
+   \   00004C                ; Setup parameters for call to function uprint
+   \   00004C   7A..         MOV     R2,#`?<Constant "set device to coordi ...">` & 0xff
+   \   00004E   7B..         MOV     R3,#(`?<Constant "set device to coordi ...">` >> 8) & 0xff
+   \   000050   800B         SJMP    ??set_coordi_1
+    551                  }else
+    552                  {
+    553                    zgWriteStartupOptions (ZG_STARTUP_SET, ZCD_STARTOPT_DEFAULT_NETWORK_STATE);
+   \                     ??set_coordi_0:
+   \   000052                ; Setup parameters for call to function zgWriteStartupOptions
+   \   000052   7A02         MOV     R2,#0x2
+   \   000054   79FF         MOV     R1,#-0x1
+   \   000056   12....       LCALL   ??zgWriteStartupOptions?relay
+    554                    uprint("set device to coordi,restart it");
+   \   000059                ; Setup parameters for call to function uprint
+   \   000059   7A..         MOV     R2,#`?<Constant "set device to coordi,...">` & 0xff
+   \   00005B   7B..         MOV     R3,#(`?<Constant "set device to coordi,...">` >> 8) & 0xff
+    555                  }         
+   \                     ??set_coordi_1:
+   \   00005D   02....       LJMP    ?Subroutine2 & 0xFFFF
+    556                  return; 
+    557          }
+    558          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    559          void set_router(void)
+   \                     set_router:
+    560          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 1
+   \   000005   74FF         MOV     A,#-0x1
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+    561              uint8 logicalType;
+    562                    osal_nv_item_init( ZCD_NV_LOGICAL_TYPE, sizeof(logicalType), &logicalType );
+   \   00000A                ; Setup parameters for call to function osal_nv_item_init
+   \   00000A   85..82       MOV     DPL,?XSP + 0
+   \   00000D   85..83       MOV     DPH,?XSP + 1
+   \   000010   8582..       MOV     ?V0 + 0,DPL
+   \   000013   8583..       MOV     ?V0 + 1,DPH
+   \   000016   78..         MOV     R0,#?V0 + 0
+   \   000018   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   00001B   7C01         MOV     R4,#0x1
+   \   00001D   7D00         MOV     R5,#0x0
+   \   00001F   7A87         MOV     R2,#-0x79
+   \   000021   7B00         MOV     R3,#0x0
+   \   000023   12....       LCALL   ??osal_nv_item_init?relay
+   \   000026   7402         MOV     A,#0x2
+   \   000028   12....       LCALL   ?DEALLOC_XSTACK8
+    563                    logicalType = ZG_DEVICETYPE_ROUTER;
+   \   00002B   85..82       MOV     DPL,?XSP + 0
+   \   00002E   85..83       MOV     DPH,?XSP + 1
+   \   000031   7401         MOV     A,#0x1
+   \   000033   F0           MOVX    @DPTR,A
+    564                    if( osal_nv_write( ZCD_NV_LOGICAL_TYPE, 0 ,sizeof(logicalType), &logicalType) != ZSUCCESS)
+   \   000034                ; Setup parameters for call to function osal_nv_write
+   \   000034   78..         MOV     R0,#?V0 + 0
+   \   000036   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000039   75..01       MOV     ?V0 + 0,#0x1
+   \   00003C   75..00       MOV     ?V0 + 1,#0x0
+   \   00003F   78..         MOV     R0,#?V0 + 0
+   \   000041   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000044   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_5:
+   \   000047   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00004A   E9           MOV     A,R1
+   \   00004B   6006         JZ      ??set_router_0
+    565                    {
+    566                      uprint("set device to router failed");
+   \   00004D                ; Setup parameters for call to function uprint
+   \   00004D   7A..         MOV     R2,#`?<Constant "set device to router ...">` & 0xff
+   \   00004F   7B..         MOV     R3,#(`?<Constant "set device to router ...">` >> 8) & 0xff
+   \   000051   800B         SJMP    ??set_router_1
+    567                    }else
+    568                    {
+    569                      zgWriteStartupOptions (ZG_STARTUP_SET, ZCD_STARTOPT_DEFAULT_NETWORK_STATE);
+   \                     ??set_router_0:
+   \   000053                ; Setup parameters for call to function zgWriteStartupOptions
+   \   000053   7A02         MOV     R2,#0x2
+   \   000055   79FF         MOV     R1,#-0x1
+   \   000057   12....       LCALL   ??zgWriteStartupOptions?relay
+    570                      uprint("set device to router,restart it");
+   \   00005A                ; Setup parameters for call to function uprint
+   \   00005A   7A..         MOV     R2,#`?<Constant "set device to router,...">` & 0xff
+   \   00005C   7B..         MOV     R3,#(`?<Constant "set device to router,...">` >> 8) & 0xff
+    571                    }
+   \                     ??set_router_1:
+   \   00005E   02....       LJMP    ?Subroutine2 & 0xFFFF
+    572                    
+    573          //          zgWriteStartupOptions (ZG_STARTUP_SET, 0x02);
+    574          //          zgInit();
+    575          //          ZDOInitDevice( 0 );
+    576          //          SystemReset();   
+    577                    return;  
+    578          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??myDelay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    myDelay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??UART_Send_String?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    UART_Send_String
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??uprint?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    uprint
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??set_panid?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    set_panid
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??cb_ReadConfiguration?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    cb_ReadConfiguration
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??cb_WriteConfiguration?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    cb_WriteConfiguration
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??init_cc2530?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    init_cc2530
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??serial_init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    serial_init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??send_dev_info?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    send_dev_info
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??get_dev_info?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    get_dev_info
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??reboot_zigbee?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    reboot_zigbee
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??gateway_to_pda?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    gateway_to_pda
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ser_process?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ser_process
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??wir_process?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    wir_process
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??calcFCS?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    calcFCS
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??sysPingRsp?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    sysPingRsp
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??sysPingReqRcvd?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    sysPingReqRcvd
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delete_asso?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delete_asso
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??set_coordi?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    set_coordi
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??set_router?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    set_router
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "set_panid failed">`:
+   \   000000   7365745F     DB "set_panid failed"
+   \            70616E69
+   \            64206661
+   \            696C6564
+   \            00      
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "set device to coordi ...">`:
+   \   000000   73657420     DB "set device to coordi failed"
+   \            64657669
+   \            63652074
+   \            6F20636F
+   \            6F726469
+   \            20666169
+   \            6C656400
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "set device to coordi,...">`:
+   \   000000   73657420     DB "set device to coordi,restart it"
+   \            64657669
+   \            63652074
+   \            6F20636F
+   \            6F726469
+   \            2C726573
+   \            74617274
+   \            20697400
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "set device to router ...">`:
+   \   000000   73657420     DB "set device to router failed"
+   \            64657669
+   \            63652074
+   \            6F20726F
+   \            75746572
+   \            20666169
+   \            6C656400
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant "set device to router,...">`:
+   \   000000   73657420     DB "set device to router,restart it"
+   \            64657669
+   \            63652074
+   \            6F20726F
+   \            75746572
+   \            2C726573
+   \            74617274
+   \            20697400
+    579          
+    580          
+    581          
+    582          
+
+   Maximum stack usage in bytes:
+
+     Function                   ISTACK PSTACK XSTACK
+     --------                   ------ ------ ------
+     UART_Send_String               2      0      9
+       -> HalUARTWrite              4      0      0
+     calcFCS                        2      0      7
+     cb_ReadConfiguration           0      0     16
+       -> osal_nv_item_len          0      0     24
+       -> osal_nv_read              0      0     32
+     cb_WriteConfiguration          0      0     14
+       -> osal_nv_write             0      0     28
+     delete_asso                    0      0     27
+       -> AddrMgrEntryGet           0      0     54
+       -> NLME_LeaveReq             0      0     54
+       -> AssocRemove               0      0     54
+       -> ZDApp_NVUpdate            0      0     54
+     gateway_to_pda                 1      0     16
+       -> osal_mem_alloc            0      0     32
+       -> HalUARTWrite              0      0     32
+       -> osal_mem_free             0      0     32
+       -> HalUARTWrite              0      0     32
+       -> osal_mem_free             0      0     32
+     get_dev_info                   0      0      0
+     init_cc2530                    0      0      0
+     myDelay                        0      0      0
+     reboot_zigbee                  3      0     16
+       -> set_coordi                4      0      8
+       -> set_router                4      0      8
+       -> HalUARTWrite              4      0      8
+     send_dev_info                  2      0      0
+       -> NLME_GetExtAddr           4      0      0
+     ser_process                    0      0     28
+       -> ZDOInitDevice             0      0     24
+       -> osal_nv_item_init         0      0     28
+       -> osal_nv_write             0      0     32
+       -> reboot_zigbee             0      0     24
+       -> ser_process               0      0     24
+       -> HalUARTWrite              0      0     24
+     serial_init                    2      0     29
+       -> HalUARTOpen               4      0     58
+     set_coordi                     0      0     19
+       -> osal_nv_item_init         0      0     26
+       -> osal_nv_write             0      0     30
+       -> uprint                    0      0     22
+       -> zgWriteStartupOptions     0      0     22
+       -> uprint                    0      0     22
+     set_panid                      0      0     16
+       -> macRadioSetPanID          0      0     24
+       -> ZMacSetReq                0      0     24
+       -> osal_nv_write             0      0     32
+       -> NLME_UpdateNV             0      0     24
+       -> uprint                    0      0     24
+     set_router                     0      0     19
+       -> osal_nv_item_init         0      0     26
+       -> osal_nv_write             0      0     30
+       -> uprint                    0      0     22
+       -> zgWriteStartupOptions     0      0     22
+       -> uprint                    0      0     22
+     sysPingReqRcvd                 2      0      0
+       -> sysPingRsp                4      0      0
+     sysPingRsp                     3      0      7
+       -> calcFCS                   4      0     14
+       -> UART_Send_String          4      0     14
+     uprint                         0      0     21
+       -> strlen                    0      0     18
+       -> UART_Send_String          0      0     18
+     wir_process                    0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label                         Bytes
+     --------------                         -----
+     _A_P1                                     1
+     _A_IEN0                                   1
+     WDCTL                                     1
+     myDelay                                  29
+     UART_Send_String                         11
+     ??Subroutine7_0                           7
+     uprint                                   23
+     ?Subroutine1                              5
+     set_panid                               114
+     ?Subroutine3                              4
+     ??Subroutine8_0                           8
+     ??Subroutine9_0                           2
+     ??Subroutine10_0                          6
+     cb_ReadConfiguration                     71
+     cb_WriteConfiguration                    41
+     init_cc2530                               5
+     ?Subroutine0                              3
+     serial_init                             101
+     ?Subroutine4                             12
+     send_dev_info                            10
+     get_dev_info                              3
+     reboot_zigbee                           141
+     gateway_to_pda                          151
+     ?Subroutine6                             12
+     ser_process                             220
+     wir_process                               3
+     calcFCS                                  35
+     sysPingRsp                               97
+     sysPingReqRcvd                           10
+     delete_asso                             125
+     ?Subroutine2                              5
+     ?Subroutine5                              6
+     set_coordi                               96
+     set_router                               97
+     ??myDelay?relay                           6
+     ??UART_Send_String?relay                  6
+     ??uprint?relay                            6
+     ??set_panid?relay                         6
+     ??cb_ReadConfiguration?relay              6
+     ??cb_WriteConfiguration?relay             6
+     ??init_cc2530?relay                       6
+     ??serial_init?relay                       6
+     ??send_dev_info?relay                     6
+     ??get_dev_info?relay                      6
+     ??reboot_zigbee?relay                     6
+     ??gateway_to_pda?relay                    6
+     ??ser_process?relay                       6
+     ??wir_process?relay                       6
+     ??calcFCS?relay                           6
+     ??sysPingRsp?relay                        6
+     ??sysPingReqRcvd?relay                    6
+     ??delete_asso?relay                       6
+     ??set_coordi?relay                        6
+     ??set_router?relay                        6
+     ?<Constant "set_panid failed">           17
+     ?<Constant "set device to coordi ...">   28
+     ?<Constant "set device to coordi,...">   32
+     ?<Constant "set device to router ...">   28
+     ?<Constant "set device to router,...">   32
+
+ 
+ 1 453 bytes in segment BANKED_CODE
+   120 bytes in segment BANK_RELAYS
+     3 bytes in segment SFR_AN
+   137 bytes in segment XDATA_ROM_C
+ 
+ 1 573 bytes of CODE  memory
+   137 bytes of CONST memory
+     0 bytes of DATA  memory (+ 3 bytes shared)
+
+Errors: none
+Warnings: 36
